@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/asset/test.css" rel="stylesheet">
+    <link href="css//style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,24 +19,64 @@
     <![endif]-->
 </head>
 <body>
-    <header class="clearfix">
-        <h1>Hello, world!</h1>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container clearfix">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">Right</a></li>
-                    <li><a href="#contact">Right</a></li>
-                </ul>
-                </div>
-            </nav>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="./images/logo.png" style="width: 150px;
+">
+                </a>
+            </div>
         </div>
-    </header>
+    </nav>
+</header>
+<div class="main">
 
+        <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
 
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="carousel-caption">
+                    caption 1
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        caption 2
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        caption 3
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carouselHacked" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carouselHacked" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/vender/bootstrap/bootstrap.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#carouselHacked').carousel({
+             interval: 1000
+             ///1000이 1초
+        });
+    });
+    </script>
   </body>
 </html>
