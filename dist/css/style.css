@@ -43,12 +43,8 @@ table {
   border-spacing: 0;
 }
 
-body {
-  padding-top: 50px;
-}
-
 .main {
-  height: 500px;
+  min-height: 100%;
 }
 
 .carousel-fade .carousel-inner .item {
