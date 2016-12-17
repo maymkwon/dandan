@@ -47,6 +47,24 @@ table {
   min-height: 100%;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  padding: 20px 0;
+}
+
+.footer-head img {
+  opacity: 0.3;
+}
+
+.address {
+  margin-top: 15px;
+  color: #b8b8b8;
+}
+
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;

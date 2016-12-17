@@ -3655,6 +3655,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 50px;
+  height: 85px;
   border: 1px solid transparent; }
   .navbar:before, .navbar:after {
     content: " ";
@@ -3942,7 +3943,9 @@ tbody.collapse.in {
   .navbar-default .navbar-text {
     color: #777; }
   .navbar-default .navbar-nav > li > a {
-    color: #777; }
+    color: #292929;
+    font-size: 14px;
+    font-weight: bold; }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
       color: #333;
       background-color: transparent; }
