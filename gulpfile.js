@@ -25,7 +25,7 @@ gulp.task('watch',[],function(){
 	watch(config.img.src, function(){
 		gulp.start('img');
 	});
-	watch('dist/index.html',function(){
+	watch('dist/*.html',function(){
 		gulp.start('html');
 	} );
     watch('./src/sass/test.scss',function(){
@@ -79,7 +79,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('html', function() {
-    gulp.src('dist/index.html')
+    gulp.src('dist/*.html')
     .pipe(connect.reload())
 });
 
