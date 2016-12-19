@@ -17,6 +17,30 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+    function _(id){ return document.getElementById(id); }
+    function submitForm(){
+    	_("mybtn").disabled = true;
+    	_("status").innerHTML = 'please wait ...';
+    	var formdata = new FormData();
+    	formdata.append( "n", _("n").value );
+    	formdata.append( "e", _("e").value );
+    	formdata.append( "m", _("m").value );
+    	var ajax = new XMLHttpRequest();
+    	ajax.open( "POST", "contact.php" );
+    	ajax.onreadystatechange = function() {
+    		if(ajax.readyState == 4 && ajax.status == 200) {
+    			if(ajax.responseText == "success"){
+    				_("my_form").innerHTML = '<h2>멋있는 '+_("n").value+' 님, 성공적으로 메일이 보내졌습니다요.</h2>';
+    			} else {
+    				_("status").innerHTML = ajax.responseText;
+    				_("mybtn").disabled = false;
+    			}
+    		}
+    	}
+    	ajax.send( formdata );
+    }
+</script>
 </head>
 <body>
 <header>
@@ -24,7 +48,7 @@
         <div class="container header-container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./main.html">
-                    <img alt="Brand" src="./images/logo.png" style="width: 150px;">
+                    <img alt="Brand" src="../images/logo.png" style="width: 150px;">
                 </a>
             </div>
             <div class="collapse navbar-collapse">
@@ -40,17 +64,19 @@
     </nav>
 </header>
 <div class="main">
-
-        <div class="container">
-            matetial
-        </div>
+<form id="my_form" onsubmit="submitForm(); return false;">
+  <p><input id="n" placeholder="Name" required></p>
+  <p><input id="e" placeholder="Email Address" type="email" required></p>
+  <textarea id="m" placeholder="write your message here" rows="10" required></textarea>
+  <p><input id="mybtn" type="submit" value="Submit Form"> <span id="status"></span></p>
+</form>
 
 </div>
 <footer>
     <div class="container">
         <div class="footer-head text-center">
             <a href="">
-                <img alt="Brand" src="./images/logo.png" style="width: 100px;">
+                <img alt="Brand" src="../images/logo.png" style="width: 100px;">
             </a>
         </div>
         <div class="address">
